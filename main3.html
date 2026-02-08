@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main3.css">
+</head>
+<body>
+    <button id="playButton" class = "music-button">Press me</button>
+        <audio id="mySong" src="Ari Lennox, J. Cole - Shea Butter Baby (Official Music Video) [FFuZ2avoYmw].mp3"></audio>
+    <div class="container">
+    <div class="left-text">
+        <div class="envelope1">
+            <p> I can't imagine a life without you in it. </p>
+        </div>
+        <div class="envelope1">
+            <p>Falling in love with you was the greatest gift God could ever give me. </p>
+        </div>
+    </div>
+
+    <div class="envelope-wrapper">
+    <div class="envelope" id="photoEnvelope">
+      <div class="flap"></div>
+      <div class="letter">
+        <img src="s-l1200.jpg" class="flowers">
+      </div>
+    </div>
+  </div>
+
+
+    <div class="right-text">
+        <div class="envelope1">
+            <p>Even until my last breath, I will love you.</p>
+        </div>
+        <div class="envelope1">
+            <p>I've never known true love until I met you </p>
+        </div>
+    </div>
+</div>
+
+<div class="bottom-button-wrapper">
+  <a href="main.html" class="back-button">Back to Main</a>
+</div>
+
+    
+
+    <script>
+        const button = document.getElementById('playButton');
+const song = document.getElementById('mySong');
+
+button.addEventListener('click', () => {
+    song.currentTime = 25; // jump to 15th second
+    song.play();  
+});
+  const envelope = document.getElementById("photoEnvelope");
+
+  envelope.addEventListener("click", () => {
+    envelope.classList.toggle("open");
+  });
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

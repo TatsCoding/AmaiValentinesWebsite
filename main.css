@@ -1,0 +1,49 @@
+.answers{
+    background-color:  pink;
+    height: 100px;
+    width: 100px;
+    margin-left: 1px;
+
+}
+body{
+    display: flex;
+    color: black;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    height: 100vh;
+    background-image: url("background2.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-family: 'Press Start 2P', cursive;
+}
+.Text{
+    font-size: 15px
+}
+.Text2{
+    font-size: 12px;
+}
+.open-button {
+    background-color: black;
+    border-radius: 100px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+    margin-top: 15px;
+    width: 100px;
+    background-color: rgba(236, 152, 208, 0.801);
+    
+}
+
+
+.envelope {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+}

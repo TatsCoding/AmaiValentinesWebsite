@@ -1,0 +1,49 @@
+/* PAGE */
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: url("background2.gif") center/cover no-repeat;
+  font-family: 'Indie Flower', cursive;
+  display: flex;
+  flex-direction: column;   /* stack elements vertically */
+  justify-content: flex-start; /* start from top */
+  align-items: center;
+  padding-top: 50px;       /* spacing from top */
+}
+
+.txt1 {
+  font-size: 100px;
+  text-align: left;
+  margin: 0;
+  color: #fff;             /* optional: white text for visibility */
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+.pic3{
+    height: 400px
+}
+
+/* BACK BUTTON AT BOTTOM */
+.bottom-button-wrapper {
+  position: fixed;      /* stick to bottom */
+  bottom: 30px;         /* distance from bottom */
+  left: 50%;            /* center horizontally */
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.back-button {
+  background-color: #d47a7a;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 18px;
+  font-family: 'Indie Flower', cursive;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.back-button:hover {
+  background-color: #e69a9a;
+  transform: scale(1.05);
+}

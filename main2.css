@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: url("background2.gif") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    font-family: 'Indie Flower', cursive;
+    /*font-family: 'Homemade Apple', cursive;*/
+    /*font-family: 'Dancing Script', cursive;*/
+}
+
+.handwrite {
+    letter-spacing: 0.6px;
+}
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    padding: 40px;
+}
+
+/* ROWS */
+.row {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+.music-button{
+    background-color: pink;
+    border-radius: 100px;
+    border:none;
+    background: #ff6b6b;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 12px 25px;
+    animation: bounceInOut 1.2s infinite;
+    font-family: 'Patrick Hand', cursive;
+    font-size: 20px;
+}
+.music-button:active {
+    box-shadow: inset 6px 6px 12px #bebebe, inset -6px -6px 12px #ffffff;
+}
+.music-button:hover {
+     transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    transform: scale(1.15);
+}
+@keyframes bounceInOut {
+    0%, 100% {
+        transform: scale(1);
+    }
+    25% {
+        transform: scale(1.15);
+    }
+    50% {
+        transform: scale(0.9);
+    }
+    75% {
+        transform: scale(1.05);
+    }
+}
+/* NOTEBOOK */
+.notebook {
+    width: 380px;
+    transform: rotate(-1deg);
+}
+
+.page {
+    background:
+        linear-gradient(to right, transparent 48px, #c86b6b 49px, transparent 50px),
+        repeating-linear-gradient(to bottom, #f5ecd9 0px, #f5ecd9 26px, #dccdb3 27px);
+    padding: 30px 25px 30px 55px;
+    min-height: 420px;
+    font-size: 18px;
+    line-height: 27px;
+    color: #3b2f2f;
+    box-shadow: 0 14px 30px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.page::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 0;
+    width: 100%;
+    height: 14px;
+    background: repeating-linear-gradient(
+        -45deg,
+        #f5ecd9,
+        #f5ecd9 8px,
+        transparent 8px,
+        transparent 16px
+    );
+}
+
+/* IMAGES */
+.image-column {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.photo {
+    width: 450px;
+    height: 480px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.photo.left { transform: rotate(-20deg); }
+.photo.right { transform: rotate(20deg); }
+
+/* PAPER UNFOLD */
+.reveal-paper {
+    opacity: 0;
+    transform: scaleY(0.6) rotate(-3deg);
+    transform-origin: top;
+    transition: 1.2s ease;
+}
+
+.reveal-paper.show {
+    opacity: 1;
+    transform: scaleY(1) rotate(-1deg);
+}
+
+/* HANDWRITING */
+.handwrite {
+    opacity: 0;
+    clip-path: inset(0 100% 0 0);
+    transition:
+        clip-path 1.2s steps(30),
+        opacity 0.3s ease;
+}
+
+.handwrite.show {
+    opacity: 1;
+    clip-path: inset(0 0 0 0);
+}
+
+/* DELAYS */
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+.delay-5 { transition-delay: 1s; }
+.delay-6 { transition-delay: 1.2s; }
+.delay-7 { transition-delay: 1.4s; }
+.delay-8 { transition-delay: 1.6s; }
+.delay-9 { transition-delay: 1.8s; }
+.delay-10 { transition-delay: 2s; }
+.delay-11 { transition-delay: 2.2s; }
+
+/* MOBILE */
+@media (max-width: 800px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+.handwrite {
+    opacity: 1 !important;
+}
+
+.envelope {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    background: rgba(214, 154, 154, 0.8);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+
+}
+.envelope .answer-button {
+    display: inline-block;
+    margin: 0 10px;
+}
+.greeting{
+    font-size: 45px;
+    margin-bottom: 0px;
+    color: darkred;
+    font-weight: bold;
+}
+.question{
+    font-size: 40px;
+    color: red;
+    font-weight: bold;
+
+}
+.answer-button{
+    font-size: 20px;
+    background-color: pink;
+    border-radius: 12px;
+     padding: 10px 40px 10px 40px;
+    cursor: pointer;
+}

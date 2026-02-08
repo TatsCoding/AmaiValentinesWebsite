@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Website</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="main2.css">
+</head>
+<body>
+
+<div class="main-content">
+
+    <!-- ROW 1 -->
+    <div class="row">
+        <button id="playButton" class = "music-button">Press me</button>
+        <audio id="mySong" src="Snoh Aalegra - DO 4 LOVE (Visualizer) [eQF7cqkiR6I].mp3"></audio>
+        <div class="notebook reveal-paper">
+            <div class="page">
+                <h2 class="handwrite delay-1">10 THINGS I LOVE ABOUT AMAI!</h2>
+                <p class="handwrite delay-2">1. Her Eyes: Her eyes are the first physical attribute I feel in love with. The way she looks at me with them make me feel like I can conquer anything.</p>
+                <p class="handwrite delay-3">2. Her Kindness: The genuine warmth and love she shows me is indescribable.</p>
+                <p class="handwrite delay-4">3. Her Intelligence: Though she doubts herself, she is the most intelligent person I know. </p>
+                <p class="handwrite delay-5">4. Her Unwavering Support: She is forever my biggest supporter even when i doubt myself.</p>
+                <p class="handwrite delay-6">5. Her Stubborness: She has the strongest belief system and a very good moral compass, nothing and no one can change that.</p>
+                <p class="handwrite delay-7">6. Her Faith: I've never seen or encountered faith like hers. She forever encourages me to better mine.</p>
+                <p class="handwrite delay-8">7. Her Name: Amai is such a unique name, which is why I can never stop calling her by it. It is as beautiful as she is.</p>
+                <p class="handwrite delay-9">8. Her Gentleness: She is such a gentle person. Never have I ever met someone whom people gravitate towards, it's like we all know she's a safe space.</p>
+                <p class="handwrite delay-10">9. Her Captivating Beauty: She is forever the most beautiful and gorgeous person, and you cannot convince me otherwise.</p>
+                <p class="handwrite delay-11">10. Everything</p>
+            </div>
+        </div>
+
+        <div class="image-column">
+            <img src="amai and i.jpeg" class="photo left">
+            <img src="amai and i 2.jpeg" class="photo right">
+        </div>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="row">
+        <div class="image-column">
+            <img src="amai and i.jpeg" class="photo left">
+            <img src="amai and i 2.jpeg" class="photo right">
+        </div>
+
+        <div class="notebook reveal-paper">
+            <div class="page">
+                <h2 class="handwrite delay-1">YOU ARE...</h2>
+                <p class="handwrite delay-2">You are the light to my darkest days. You never fail to add fuel to my burning hearts flames.</p>
+                <p class="handwrite delay-3">You are phenominal beyond my minds comprehension. Your beauty makes me question whether I am worthy, but loving you is forever my intention</p>
+                <p class="handwrite delay-4">You ae a blessing in a world full of nothing but malice. I yearn to build a love filled home; your forever palace.</p>
+                <p class="handwrite delay-5">You are divine in a world full of unexeptionally mundane people. In you I confide, you never fail to ease my pain ensuring recovery is nothing but simple.</p>
+                <p class="handwrite delay-6">You are intuitive, yet make the mistake of underestimating our level of intelligence. Never have I ever met a woman with your stature of elegance.</p>
+                <p class="handwrite delay-7">You are forever my world</p>
+            </div>
+        </div>
+    </div>
+    <!-- ROW 2 -->
+    <div class="envelope">
+        <p class = "greeting">Hey there,</p>
+        <p class = "question">Will you be my valentine?</p>
+        <div class="button-row">
+            <a href="main3.html">
+                <button class = "answer-button">Yes</button>
+            </a>
+            <a href="main4.html">
+                <button class = "answer-button">Of Course</button>
+            </a>
+        </div>
+            
+            <p>14 FEB 2026</p>
+    </div>
+    
+
+
+</div>
+
+<script>
+
+const button = document.getElementById('playButton');
+const song = document.getElementById('mySong');
+
+button.addEventListener('click', () => {
+    song.currentTime = 25; // jump to 15th second
+    song.play();  
+});
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+
+            // reveal handwriting AFTER paper opens
+            entry.target.querySelectorAll(".handwrite")
+                .forEach((line, index) => {
+                    setTimeout(() => {
+                        line.classList.add("show");
+                    }, index * 200);
+                });
+
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.3 });
+
+document.querySelectorAll(".reveal-paper")
+    .forEach(el => observer.observe(el));
+</script>
+
+
+</body>
+</html>
